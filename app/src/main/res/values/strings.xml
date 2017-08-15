@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Profile Page -->
+    <!-- Menu -->
+    <string name="label_share">Share</string>
+    <string name="label_save">Save</string>
+    <string name="label_export">Export</string>
+
+    <!-- App Bar -->
+    <string name="label_membership">+ MEMBERSHIP</string>
+
+    <!-- Tab Item -->
+    <string name="label_tab_profile">PROFILE</string>
+    <string name="label_tab_review">REVIEW</string>
+
+</resources>
