@@ -68,7 +68,7 @@ public class ProfileFragmentPresenterImpl implements ProfileFragmentPresenter, D
             items.add("My Exams");
 
             Type listType = new TypeToken<ArrayList<Exam>>(){}.getType();
-            List<Exam> examList = new Gson().fromJson(skillString, listType);
+            List<Exam> examList = new Gson().fromJson(examString, listType);
 
             for (int i = 0; i < examList.size(); i++){
                 items.add(examList.get(i));

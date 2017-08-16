@@ -1,10 +1,12 @@
 package dstudio.com.danapotplant.ui.profile.fragment.activityview;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 
+import dstudio.com.danapotplant.R;
 import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.view.ProfileFragment;
 import dstudio.com.danapotplant.ui.profile.fragment.reviewfragment.ReviewFragment;
 
@@ -13,9 +15,11 @@ import dstudio.com.danapotplant.ui.profile.fragment.reviewfragment.ReviewFragmen
  */
 
 public class ProfileViewPagerAdapter extends FragmentStatePagerAdapter {
+    private Context context;
 
-    public ProfileViewPagerAdapter(FragmentManager fm) {
+    public ProfileViewPagerAdapter(Context context,FragmentManager fm) {
         super(fm);
+        this.context = context;
     }
 
     @Override
@@ -34,7 +38,18 @@ public class ProfileViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 2;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        switch (position) {
+            case 0:
+                return context.getString(R.string.label_tab_profile);
+            case 1:
+            default:
+                return context.getString(R.string.label_tab_review);
+        }
     }
 
 }

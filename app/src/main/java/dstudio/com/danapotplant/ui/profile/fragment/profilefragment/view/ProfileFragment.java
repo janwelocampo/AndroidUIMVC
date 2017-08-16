@@ -3,6 +3,8 @@ package dstudio.com.danapotplant.ui.profile.fragment.profilefragment.view;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import dstudio.com.danapotplant.R;
 import dstudio.com.danapotplant.dagger.applications.App;
@@ -26,9 +29,11 @@ public class ProfileFragment extends Fragment implements ProfileFragmentView{
     @Inject
     ProfileFragmentPresenter presenter;
 
+    @BindView(R.id.recycle_profile)
+    RecyclerView recyclerViewProfile;
+
     @Override public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         ((App) getActivity().getApplication()).getAppComponent(getActivity()).inject(this);
     }
 
@@ -51,6 +56,7 @@ public class ProfileFragment extends Fragment implements ProfileFragmentView{
 
     @Override
     public void showProfileTabData(ArrayList<Object> items) {
-        Toast.makeText(getActivity(), ""+items.size(), Toast.LENGTH_LONG).show();
+        recyclerViewProfile.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerViewProfile.setAdapter(new ProfileAdapter(items));
     }
 }

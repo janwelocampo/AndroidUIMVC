@@ -1,5 +1,6 @@
 package dstudio.com.danapotplant.ui.profile.fragment.activityview;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ import dstudio.com.danapotplant.dagger.applications.App;
 import dstudio.com.danapotplant.model.Profile;
 import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenter;
 
-public class ProfileActivity extends AppCompatActivity implements ProfileView{
+public class ProfileActivity extends AppCompatActivity implements ProfileView, TabLayout.OnTabSelectedListener{
 
     @Inject
     ProfilePresenter presenter;
@@ -49,6 +50,10 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView{
     @BindView(R.id.view_pager)
     ViewPager viewPager;
 
+    @BindView(R.id.floating_save_profile)
+    FloatingActionButton floatingSaveProfile;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +69,9 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView{
 
         setSupportActionBar(toolbar);
         toolbar.inflateMenu(R.menu.profile_menu);
+
+        tabLayout.addOnTabSelectedListener(this);
+
     }
 
     @Override
@@ -97,8 +105,29 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView{
         textName.setText(profile.getUsername());
         textShadowName.setText(profile.getUsername());
 
-        viewPager.setAdapter(new ProfileViewPagerAdapter(getSupportFragmentManager()));
+        viewPager.setAdapter(new ProfileViewPagerAdapter(this,getSupportFragmentManager()));
+        tabLayout.setupWithViewPager(viewPager);
 
-        //Toast.makeText(this, ""+profile.getUsername(),Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        if (tab.getText().toString().equals(getString(R.string.label_tab_profile))){
+            floatingSaveProfile.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            floatingSaveProfile.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
     }
 }
