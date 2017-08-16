@@ -5,4 +5,8 @@
     <color name="colorAccent">#ADD8E6</color>
     <color name="colorBackground">#FAFAFA</color>
 
+
+    <color name="colorSeekBarGreen">#5DC065</color>
+    <color name="colorSeekBarBackground">#F8F8F8</color>
+    colorSeekBarGreen
 </resources>

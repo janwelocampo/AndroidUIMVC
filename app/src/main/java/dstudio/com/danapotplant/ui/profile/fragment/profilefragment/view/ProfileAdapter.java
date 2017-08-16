@@ -13,6 +13,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dstudio.com.danapotplant.R;
+import dstudio.com.danapotplant.model.AddMore;
 import dstudio.com.danapotplant.model.Exam;
 import dstudio.com.danapotplant.model.Profile;
 import dstudio.com.danapotplant.model.Skill;
@@ -93,6 +94,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Exam exam = (Exam) items.get(position);
         vh.textExam.setText(exam.getName());
         vh.seekBar.setProgress(exam.getProgress());
+        vh.seekBar.setEnabled(false);
     }
 
     private void configureViewHolderSkill(ViewHolderSkill vh, int position) {
@@ -102,8 +104,10 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     private void configureViewHolderButton(ViewHolderButton vh, int position) {
-        vh.buttonAddMore.setText("Add more");
-
+        AddMore addMore = (AddMore) items.get(position);
+        vh.buttonAddMore.setText(addMore.getAddMore());
+        //normally set the ID
+        vh.buttonAddMore.setTag(addMore);
     }
 
     private void configureViewHolderTitle(ViewHolderTitle vh, int position) {
@@ -127,7 +131,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         else if (items.get(position) instanceof Skill) {
             return SKILL;
         }
-        else if (items.get(position) instanceof Integer) {
+        else if (items.get(position) instanceof AddMore) {
             return BUTTON;
         }
         return -1;

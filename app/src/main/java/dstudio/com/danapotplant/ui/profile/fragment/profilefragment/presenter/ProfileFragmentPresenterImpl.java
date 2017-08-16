@@ -12,6 +12,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import dstudio.com.danapotplant.dagger.applications.App;
+import dstudio.com.danapotplant.model.AddMore;
 import dstudio.com.danapotplant.model.Exam;
 import dstudio.com.danapotplant.model.Skill;
 import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.view.ProfileFragmentView;
@@ -61,7 +62,8 @@ public class ProfileFragmentPresenterImpl implements ProfileFragmentPresenter, D
                 items.add(skillList.get(i));
             }
 
-            items.add(1);
+            //dont know where to get data. Just add this value
+            items.add(new AddMore("Add more skill (5/250)", 1));
         }
 
         if (examString != null){
@@ -74,7 +76,8 @@ public class ProfileFragmentPresenterImpl implements ProfileFragmentPresenter, D
                 items.add(examList.get(i));
             }
 
-            items.add(1);
+            //dont know where to get data. Just add this value
+            items.add(new AddMore("Take more Class", 2));
         }
 
         view.showProfileTabData(items);
