@@ -1,4 +1,4 @@
-package dstudio.com.danapotplant.ui.profile.fragment.activitypresenter;
+package dstudio.com.danapotplant.ui.profile.presenter;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import dstudio.com.danapotplant.api.APIInterface;
 import dstudio.com.danapotplant.api.connectivity.NoNetworkException;
 import dstudio.com.danapotplant.dagger.applications.App;
 import dstudio.com.danapotplant.model.Profile;
-import dstudio.com.danapotplant.ui.profile.fragment.activityview.ProfileView;
+import dstudio.com.danapotplant.ui.profile.view.ProfileView;
 import dstudio.com.danapotplant.util.DanaPotPlantUtils;
 import dstudio.com.danapotplant.util.ObjectManager;
 import rx.Subscriber;

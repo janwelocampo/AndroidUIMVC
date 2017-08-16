@@ -1,4 +1,4 @@
-package dstudio.com.danapotplant.ui.profile.fragment.activityview;
+package dstudio.com.danapotplant.ui.profile.view;
 
 import dstudio.com.danapotplant.model.Profile;
 

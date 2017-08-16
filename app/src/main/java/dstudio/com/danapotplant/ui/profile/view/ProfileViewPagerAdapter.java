@@ -1,4 +1,4 @@
-package dstudio.com.danapotplant.ui.profile.fragment.activityview;
+package dstudio.com.danapotplant.ui.profile.view;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.support.v4.view.PagerAdapter;
 import dstudio.com.danapotplant.R;
 import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.view.ProfileFragment;
 import dstudio.com.danapotplant.ui.profile.fragment.reviewfragment.ReviewFragment;
+
 
 /**
  * Created by janwelcris on 8/15/2017.

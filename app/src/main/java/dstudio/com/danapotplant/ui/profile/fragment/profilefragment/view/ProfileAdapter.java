@@ -15,7 +15,6 @@ import butterknife.ButterKnife;
 import dstudio.com.danapotplant.R;
 import dstudio.com.danapotplant.model.AddMore;
 import dstudio.com.danapotplant.model.Exam;
-import dstudio.com.danapotplant.model.Profile;
 import dstudio.com.danapotplant.model.Skill;
 
 /**

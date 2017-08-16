@@ -1,4 +1,4 @@
-package dstudio.com.danapotplant.ui.profile.fragment.activityview;
+package dstudio.com.danapotplant.ui.profile.view;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 import dstudio.com.danapotplant.R;
 import dstudio.com.danapotplant.dagger.applications.App;
 import dstudio.com.danapotplant.model.Profile;
-import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenter;
+import dstudio.com.danapotplant.ui.profile.presenter.ProfilePresenter;
 
 public class ProfileActivity extends AppCompatActivity implements ProfileView, TabLayout.OnTabSelectedListener{
 

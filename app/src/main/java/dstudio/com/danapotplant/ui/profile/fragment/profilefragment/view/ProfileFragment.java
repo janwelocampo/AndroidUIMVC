@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,11 +19,12 @@ import dstudio.com.danapotplant.R;
 import dstudio.com.danapotplant.dagger.applications.App;
 import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.presenter.ProfileFragmentPresenter;
 
+
 /**
  * Created by janwelcris on 8/15/2017.
  */
 
-public class ProfileFragment extends Fragment implements ProfileFragmentView{
+public class ProfileFragment extends Fragment implements ProfileFragmentView {
 
     @Inject
     ProfileFragmentPresenter presenter;

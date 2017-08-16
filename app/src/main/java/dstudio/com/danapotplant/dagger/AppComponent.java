@@ -3,10 +3,10 @@ package dstudio.com.danapotplant.dagger;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import dstudio.com.danapotplant.ui.profile.fragment.activityview.ProfileActivity;
-import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenterImpl;
-import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.view.ProfileFragment;
+import dstudio.com.danapotplant.ui.profile.presenter.ProfilePresenterImpl;
+import dstudio.com.danapotplant.ui.profile.view.ProfileActivity;
 import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.presenter.ProfileFragmentPresenterImpl;
+import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.view.ProfileFragment;
 
 /**
  * Created by janwelcris on 8/14/2017.

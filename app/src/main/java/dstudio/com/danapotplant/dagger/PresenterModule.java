@@ -6,8 +6,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenter;
-import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenterImpl;
+import dstudio.com.danapotplant.ui.profile.presenter.ProfilePresenter;
+import dstudio.com.danapotplant.ui.profile.presenter.ProfilePresenterImpl;
 import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.presenter.ProfileFragmentPresenter;
 import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.presenter.ProfileFragmentPresenterImpl;
 
