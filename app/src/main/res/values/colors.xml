@@ -8,5 +8,7 @@
 
     <color name="colorSeekBarGreen">#5DC065</color>
     <color name="colorSeekBarBackground">#F8F8F8</color>
-    colorSeekBarGreen
+
+    <color name="colorBottomButtonProfile">#0087DF</color>
+
 </resources>

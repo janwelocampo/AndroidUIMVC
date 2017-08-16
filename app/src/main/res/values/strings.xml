@@ -15,4 +15,8 @@
     <string name="label_tab_profile">PROFILE</string>
     <string name="label_tab_review">REVIEW</string>
 
+    <!-- Bottom Button -->
+    <string name="label_save_profile">SAVE PROFILE</string>
+
+    <string name="label_freelancer_empty_view">Freelancer Empty view</string>
 </resources>

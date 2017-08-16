@@ -21,6 +21,9 @@ public class ReviewFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_review, container, false);
         ButterKnife.bind(this, v);
 
+        //Don't know what to do here.
+        // API Response says nothing about it. For now I just set the layout static
+
         return v;
     }
 

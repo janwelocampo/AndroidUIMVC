@@ -135,23 +135,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-    <!--<android.support.v4.widget.NestedScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--&gt;-->
-        <!--<FrameLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/content"></FrameLayout>-->
-    <!--</android.support.v4.widget.NestedScrollView>-->
 
 
-    <android.support.design.widget.FloatingActionButton
+
+    <Button
         android:id="@+id/floating_save_profile"
-        android:layout_width="357dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:text="@string/label_save_profile"
+        android:textColor="@android:color/white"
+        android:background="@color/colorBottomButtonProfile"
         />
 
 </android.support.design.widget.CoordinatorLayout>
