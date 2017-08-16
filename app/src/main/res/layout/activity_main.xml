@@ -130,29 +130,24 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/scroll"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1000dp"
-                android:text="WAAAAHH"/>
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <!--<android.support.v4.widget.NestedScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--&gt;-->
+        <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:id="@+id/content"></FrameLayout>-->
+    <!--</android.support.v4.widget.NestedScrollView>-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="match_parent"
+        android:layout_width="357dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"

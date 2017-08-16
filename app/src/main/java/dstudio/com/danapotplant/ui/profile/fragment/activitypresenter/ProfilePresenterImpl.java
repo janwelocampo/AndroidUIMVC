@@ -1,17 +1,16 @@
-package dstudio.com.danapotplant.screenview.profile;
+package dstudio.com.danapotplant.ui.profile.fragment.activitypresenter;
 
 import android.content.Context;
-
-import com.google.gson.Gson;
 
 import javax.inject.Inject;
 
 import dstudio.com.danapotplant.api.APIInterface;
 import dstudio.com.danapotplant.api.connectivity.NoNetworkException;
+import dstudio.com.danapotplant.dagger.applications.App;
 import dstudio.com.danapotplant.model.Profile;
-import dstudio.com.danapotplant.dagger.applications.ProfileApplication;
+import dstudio.com.danapotplant.ui.profile.fragment.activityview.ProfileView;
 import dstudio.com.danapotplant.util.DanaPotPlantUtils;
-import dstudio.com.danapotplant.util.SharedPreferencesUtils;
+import dstudio.com.danapotplant.util.ObjectManager;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -28,13 +27,12 @@ public class ProfilePresenterImpl implements ProfilePresenter, DanaPotPlantUtils
     APIInterface apiInterface;
 
     @Inject
-    SharedPreferencesUtils sharedPreferencesUtils;
+    ObjectManager objectManager;
 
-    private Gson mGson;
 
     public ProfilePresenterImpl(Context context) {
-        ((ProfileApplication) context).getAppComponent().inject(this);
-        mGson = new Gson();
+        ((App) context).getAppComponent(context).inject(this);
+
     }
     @Override
     public void setView(ProfileView view) {
@@ -69,8 +67,8 @@ public class ProfilePresenterImpl implements ProfilePresenter, DanaPotPlantUtils
 
                     @Override
                     public void onNext(Profile profile) {
-                        sharedPreferencesUtils.setData(SKILLS, mGson.toJson(profile.getSkills()));
-                        sharedPreferencesUtils.setData(EXAMS, mGson.toJson(profile.getExams()));
+                        objectManager.save(profile.getExams(), EXAMS);
+                        objectManager.save(profile.getSkills(), SKILLS);
                         view.showProfileData(profile);
                     }
                 });

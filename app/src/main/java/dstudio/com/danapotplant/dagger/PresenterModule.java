@@ -6,8 +6,10 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import dstudio.com.danapotplant.screenview.profile.ProfilePresenter;
-import dstudio.com.danapotplant.screenview.profile.ProfilePresenterImpl;
+import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenter;
+import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenterImpl;
+import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.presenter.ProfileFragmentPresenter;
+import dstudio.com.danapotplant.ui.profile.fragment.profilefragment.presenter.ProfileFragmentPresenterImpl;
 
 /**
  * Created by janwelcris on 8/14/2017.
@@ -18,7 +20,15 @@ public class PresenterModule {
 
     @Provides
     @Singleton
-    ProfilePresenter provideFoodzPresenter(Context context) {
+    ProfilePresenter provideProfilePresenter(Context context) {
         return new ProfilePresenterImpl(context);
     }
+
+    @Provides
+    @Singleton
+    ProfileFragmentPresenter provideProfileFragmentPresenter(Context context) {
+        return new ProfileFragmentPresenterImpl(context);
+    }
+
+
 }

@@ -1,6 +1,7 @@
-package dstudio.com.danapotplant.screenview.profile;
+package dstudio.com.danapotplant.ui.profile.fragment.activityview;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,8 +19,9 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dstudio.com.danapotplant.R;
+import dstudio.com.danapotplant.dagger.applications.App;
 import dstudio.com.danapotplant.model.Profile;
-import dstudio.com.danapotplant.dagger.applications.ProfileApplication;
+import dstudio.com.danapotplant.ui.profile.fragment.activitypresenter.ProfilePresenter;
 
 public class ProfileActivity extends AppCompatActivity implements ProfileView{
 
@@ -44,12 +46,15 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView{
     @BindView(R.id.image_prof_pic)
     ImageView imageProfilePic;
 
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((ProfileApplication) getApplication()).getAppComponent().inject(this);
+        ((App) getApplication()).getAppComponent(this).inject(this);
 
         ButterKnife.bind(this);
 
@@ -91,6 +96,8 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView{
 
         textName.setText(profile.getUsername());
         textShadowName.setText(profile.getUsername());
+
+        viewPager.setAdapter(new ProfileViewPagerAdapter(getSupportFragmentManager()));
 
         //Toast.makeText(this, ""+profile.getUsername(),Toast.LENGTH_LONG).show();
     }
